@@ -83,6 +83,7 @@ RCT_EXPORT_METHOD(init:(NSDictionary *)options
   localPlayer.authenticateHandler = ^(UIViewController *gcViewController, NSError *error){
      if (gcViewController != nil) {
       [rnView presentViewController:gcViewController animated:YES completion:nil];
+      resolve(@"alreaedy init");
     }else{
       if ([GKLocalPlayer localPlayer].authenticated) {
         // Get the default leaderboard identifier.
